@@ -1,3 +1,37 @@
+
+## Installation and running
+
+from the root run the following command in terminal, powershell, cmd, etc.
+
+```sh
+yarn install
+```
+or
+
+```sh
+npm install
+```
+
+Once the `node_modules` have been installed, you can now run the following
+
+```sh
+npm start
+```
+
+If you wish to run tests, you can simply run the following command
+
+```sh
+npm test
+```
+
+Once you have run the test command you will be prompted a menu. To run entire test suite press `a`.
+
+## Assumptions
+
+- Using [Create React App](https://github.com/facebookincubator/create-react-app) is more of an architectural benefit than an obstruction.
+- Keeping the Application in its non-ejected state and using opinionated libraries such as [styled components](https://github.com/styled-components/styled-components) will help keep this Application updated and future protect it from stagnation.
+- Using code splitting is beneficial 'complexity'.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
