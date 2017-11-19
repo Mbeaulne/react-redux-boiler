@@ -1,13 +1,19 @@
-import React from 'react'
-import {
-    BrowserRouter as Router,
-    Route
-  } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { compose, branch, renderComponent } from 'recompose'
 
-import { Component as Posts } from './pages/posts'
+import { selectUserIsAuthed } from './selectors/userSelector'
+import AuthedRoutes from './components/authedRoutes'
+import UnauthedRoutes from './components/unauthedRoutes'
 
-export default () => (
-  <Router>
-    <Route exact path='/' component={Posts} />
-  </Router>
+
+const mapStateToProps = state => ({
+  isAuthed: selectUserIsAuthed(state)
+})
+
+export default compose(
+  connect(mapStateToProps),
+  branch(
+    ({isAuthed}) => isAuthed,
+    renderComponent(AuthedRoutes)
   )
+)(UnauthedRoutes)

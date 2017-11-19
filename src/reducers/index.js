@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import user from './user'
 import { reducer as posts } from '../pages/posts'
+import { reducer as user } from '../pages/login'
 
 const reducer = combineReducers({
-  user,
-  posts
+  posts,
+  user
 })
 
 export default reducer
