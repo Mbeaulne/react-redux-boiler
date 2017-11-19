@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 import {
     BrowserRouter as Router,
-    Route,
-  } from 'react-router-dom';
+    Route
+  } from 'react-router-dom'
 
-  import { Component as Posts } from './pages/posts';
+import { Component as Posts } from './pages/posts'
 
-  export default () => (
-    <Router>
-        <Route exact path="/" component={Posts}/>
-    </Router>
+export default () => (
+  <Router>
+    <Route exact path='/' component={Posts} />
+  </Router>
   )

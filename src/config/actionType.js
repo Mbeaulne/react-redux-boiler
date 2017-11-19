@@ -1,1 +1,1 @@
-export const HELLO_WORLD = 'HELLO_WORLD';
+export const HELLO_WORLD = 'HELLO_WORLD'

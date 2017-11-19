@@ -31,6 +31,8 @@ Once you have run the test command you will be prompted a menu. To run entire te
 - Using [Create React App](https://github.com/facebookincubator/create-react-app) is more of an architectural benefit than an obstruction.
 - Keeping the Application in its non-ejected state and using opinionated libraries such as [styled components](https://github.com/styled-components/styled-components) will help keep this Application updated and future protect it from stagnation.
 - Using code splitting is beneficial 'complexity'.
+- [redux-thunk](https://github.com/gaearon/redux-thunk) will be used instead of sagas, observables, etc due to the simple nature of the api calls in this project.
+- Any sort of auth state will be stored in local or session storage as a basic string. If this were a production app with a real server, we would likely do the same but with a [JWT](https://jwt.io/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
