@@ -1,7 +1,7 @@
 import { createAction } from 'redux-act';
 import { fakeLogin } from '../../fake-server/login';
 
-export const addPosts = createAction('add posts to state');
+export const addPosts = createAction('ADD_POSTS');
 
 
 export const login = () => dispatch => {

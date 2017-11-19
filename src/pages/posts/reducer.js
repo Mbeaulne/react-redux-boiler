@@ -5,5 +5,11 @@ import {
 } from './actions';
 
 export default createReducer({
-    [addPosts]: (state, payload) =>({ ...state,  payload})
-  }, {post: 'hey dudes'});
+    [addPosts]: (state, payload) =>([
+        ...state,
+        payload
+    ])
+  }, [{
+      title: 'hey dudes',
+      body: 'how are things'
+    }]);

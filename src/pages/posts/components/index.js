@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import styled, { css } from 'styled-components';
 
 const Text = styled.div`
@@ -16,12 +15,8 @@ const App = ({state, login}) => {
     </div>
   );
 
-}
+};
 
-const mapStateToProps = state => ({
-    state: state
-  });
-   
-  export default connect(mapStateToProps)(App);
+export default App;
   
 
