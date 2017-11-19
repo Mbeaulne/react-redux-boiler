@@ -4,5 +4,5 @@ const selectUser = state => state.user
 
 export const selectUserName = createSelector(
     selectUser,
-    user => user.name
+    user => user.username
 )

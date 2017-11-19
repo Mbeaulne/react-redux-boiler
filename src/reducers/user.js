@@ -1,15 +1,9 @@
+import { createReducer } from 'redux-act'
+
 import {
-    HELLO_WORLD
-} from '../config/actionType'
+    updateUser
+} from '../actions'
 
-const userReducer = (state = {name: 'Owen', age: 2}, action) => {
-  switch (action.type) {
-    case HELLO_WORLD: {
-      return {...state, ...action.payload}
-    }
-    default:
-      return state
-  }
-}
-
-export default userReducer
+export default createReducer({
+  [updateUser]: (state, payload) =>(payload[0])
+}, {name: 'Owen', age: 2})

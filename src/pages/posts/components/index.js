@@ -6,11 +6,11 @@ const Text = styled.div`
     font-size: 25px;
 `
 
-const App = ({state, login}) => {
+const App = ({name, login}) => {
   return (
     <div>
       <Text onClick={login}>
-        zzzzzzzzzzzzzzzzzz
+        click me to log in {name}
       </Text>
     </div>
   )
