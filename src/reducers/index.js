@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import { reducer as posts } from '../pages/posts'
-import { reducer as user } from '../pages/login'
+import user from './auth'
 
 const reducer = combineReducers({
   posts,

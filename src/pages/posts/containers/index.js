@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { compose, withState, withHandlers } from 'recompose'
 
 import { selectUserName } from '../selectors'
 import { login } from '../../../actions'
@@ -9,7 +10,14 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  login
+  onLoginClick: login
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Component)
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withState('email', 'setEmail', ''),
+    withHandlers({
+      handleChange: ({setEmail}) => e => setEmail(e.target.value),
+      handleClick: ({email, onLoginClick}) => () => onLoginClick(email)
+    })
+)(Component)

@@ -6,11 +6,12 @@ const Text = styled.div`
     font-size: 25px;
 `
 
-const App = ({name, login}) => {
+const App = ({email, handleClick, handleChange}) => {
   return (
     <div>
-      <Text onClick={login}>
-        click me to log in {name}
+      <input type="text" onChange={handleChange} />
+      <Text onClick={handleClick}>
+      Sincere@april.biz click me to log in with: {email}
       </Text>
     </div>
   )

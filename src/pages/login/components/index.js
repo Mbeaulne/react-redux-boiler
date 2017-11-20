@@ -11,7 +11,7 @@ const App = ({email, handleClick, handleChange}) => {
     <div>
       <input type="text" onChange={handleChange} />
       <Text onClick={handleClick}>
-        click me to log in with: {email}
+      Sincere@april.biz click me to log in with: {email}
       </Text>
     </div>
   )

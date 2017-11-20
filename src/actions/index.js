@@ -1,9 +1,14 @@
-import { fakeLogin } from '../fake-server/login'
+import { fakeLogin } from '../api/login'
 import { createAction } from 'redux-act'
 
-export const updateUser = createAction('ADD_USER')
+export const addUser = createAction('ADD_USER')
+export const signOut = createAction('SIGN_OUT')
 
-export const login = () => dispatch => {
-  fakeLogin('Sincere@april.biz')
-  .then(data =>  dispatch(updateUser(data)))
+export const login = email => dispatch => {
+  fakeLogin(email)
+  .then(data =>  {
+    if(!data) throw 'no user'
+    dispatch(addUser(data))
+  })
+  .catch(() => dispatch(signOut()))
 }
