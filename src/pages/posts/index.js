@@ -3,7 +3,4 @@ import reducer from './reducer';
 
 const Component = asyncComponent(() => import('./containers'));
 
-export {
-    reducer,
-    Component
-}
+export { reducer, Component };
