@@ -14,14 +14,14 @@ describe('Posts actions and reducer', () => {
   it('runs addPosts action', () => {
     const actionCalled = actions.addPosts(newPost);
     expect(actionCalled.type).toEqual('ADD_POSTS');
-    expect(actionCalled.payload).toEqual(newPost);
+    expect(actionCalled.post).toEqual(newPost);
   });
 
   it('runs reducer with no action', () => {
     expect(reducer(undefined, {})).toEqual([
       {
-        body: 'how are things',
-        title: 'hey dudes'
+        title: 'Default Title',
+        description: 'Default Description'
       }
     ]);
   });
@@ -29,8 +29,8 @@ describe('Posts actions and reducer', () => {
   it('runs reducer with newPost', () => {
     expect(reducer(undefined, actions.addPosts(newPost))).toEqual([
       {
-        body: 'how are things',
-        title: 'hey dudes'
+        title: 'Default Title',
+        description: 'Default Description'
       },
       newPost
     ]);
