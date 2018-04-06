@@ -1,15 +1,21 @@
-import { createReducer } from 'redux-act'
+// @flow
 
-import {
-    addPosts
-} from './actions'
+import { Post, actions, State } from './types';
 
-export default createReducer({
-  [addPosts]: (state, payload) => ([
-    ...state,
-    payload
-  ])
-}, [{
-  title: 'hey dudes',
-  body: 'how are things'
-}])
+import { addPosts } from './actions';
+
+const defaultState: State = [
+  {
+    title: 'Default Title',
+    description: 'Default Description'
+  }
+];
+
+export default (state: State = defaultState, action: actions): State => {
+  switch (action.type) {
+    case 'ADD_POSTS':
+      return [...state, action.post];
+    default:
+      return state;
+  }
+};

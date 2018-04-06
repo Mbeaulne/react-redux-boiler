@@ -1,4 +1,4 @@
-import { createAction } from 'redux-act'
-import { fakeLogin } from '../../fake-server/login'
+// @flow
+import { Post, addPostsAction } from './types';
 
-export const addPosts = createAction('ADD_POSTS')
+export const addPosts = (post: Post): addPostsAction => ({ type: 'ADD_POSTS', post });
