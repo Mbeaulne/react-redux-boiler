@@ -1,9 +1,8 @@
-import { fakeLogin } from '../fake-server/login'
-import { createAction } from 'redux-act'
+import { fakeLogin } from '../fake-server/login';
+import { createAction } from 'redux-act';
 
-export const updateUser = createAction('ADD_USER')
+export const updateUser = payload => ({ type: 'ADD_USER', payload });
 
 export const login = () => dispatch => {
-  fakeLogin('Sincere@april.biz')
-  .then(data =>  dispatch(updateUser(data)))
-}
+  fakeLogin('Sincere@april.biz').then(data => dispatch(updateUser(data)));
+};
