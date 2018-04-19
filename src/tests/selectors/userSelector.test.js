@@ -2,7 +2,7 @@
  * @jest-environment node
  */
 
-import { selectUserName } from './userSelector';
+import { selectUserName } from '../../selectors/userSelector';
 
 describe('User Selector', () => {
   const state = {

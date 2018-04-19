@@ -1,17 +1,13 @@
-// @flow
-
-import { Post, actions, State } from './types';
-
 import { addPosts } from './actions';
 
-const defaultState: State = [
+const defaultState = [
   {
     title: 'Default Title',
     description: 'Default Description'
   }
 ];
 
-export default (state: State = defaultState, action: actions): State => {
+export default (state = defaultState, action) => {
   switch (action.type) {
     case 'ADD_POSTS':
       return [...state, action.post];
